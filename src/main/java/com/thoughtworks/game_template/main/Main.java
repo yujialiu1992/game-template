@@ -4,6 +4,7 @@ import com.thoughtworks.game_template.game.Game;
 import com.thoughtworks.game_template.game.Movable;
 import com.thoughtworks.game_template.render.Renderer;
 import com.thoughtworks.game_template.render.Sprite;
+import com.thoughtworks.game_template.render.Vector2d;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -18,7 +19,7 @@ public class Main {
 
         List<Movable> objects = newArrayList();
         Game game = new Game(objects, renderer);
-        game.spawnEntity(350, 350);
+        game.spawnEntity(new Vector2d(350, 350));
 
         game.run();
 
@@ -26,7 +27,7 @@ public class Main {
     }
 
     private static List<Sprite> background() {
-        Sprite backgroundSprite = new Sprite(loadImage("starfield.png"), 0, 0);
+        Sprite backgroundSprite = new Sprite(loadImage("starfield.png"), new Vector2d(0, 0));
         return newArrayList(backgroundSprite);
     }
 

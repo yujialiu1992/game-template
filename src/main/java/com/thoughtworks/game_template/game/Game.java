@@ -2,6 +2,7 @@ package com.thoughtworks.game_template.game;
 
 import com.thoughtworks.game_template.render.Renderer;
 import com.thoughtworks.game_template.render.Sprite;
+import com.thoughtworks.game_template.render.Vector2d;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,16 +31,15 @@ public class Game implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         for (Movable entity : entities) {
-            int x = random.nextInt(3) - 1;
-            int y = 0;
-            entity.move(x, y);
+            Vector2d delta = new Vector2d(random.nextInt(3) - 1, 0);
+            entity.move(delta);
         }
         renderer.repaint();
     }
 
-    public void spawnEntity(int x, int y) {
+    public void spawnEntity(Vector2d position) {
         Image playerShipImage = loadImage("playerShip.png").getScaledInstance(40, 40, 0);
-        Sprite entity = new Sprite(playerShipImage, x, y);
+        Sprite entity = new Sprite(playerShipImage, position);
         entities.add(entity);
         renderer.addSprite(entity);
 

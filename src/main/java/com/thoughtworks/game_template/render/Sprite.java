@@ -7,22 +7,19 @@ import java.awt.Graphics;
 
 public class Sprite implements Movable {
     private Image image;
-    private int x;
-    private int y;
+    private Vector2d position;
 
-    public Sprite(Image image, int x, int y) {
+    public Sprite(Image image, Vector2d position) {
         this.image = image;
-        this.x = x;
-        this.y = y;
+        this.position = position;
     }
 
     public void draw(Graphics graphics) {
-        graphics.drawImage(image, x, y, null);
+        graphics.drawImage(image, position.getX(), position.getY(), null);
     }
 
     @Override
-    public void move(int x, int y) {
-        this.x += x;
-        this.y += y;
+    public void move(Vector2d delta) {
+        position.add(delta);
     }
 }
