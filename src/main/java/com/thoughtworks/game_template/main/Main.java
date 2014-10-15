@@ -1,7 +1,8 @@
 package com.thoughtworks.game_template.main;
 
+import com.thoughtworks.game_template.physics.Entity;
 import com.thoughtworks.game_template.game.Game;
-import com.thoughtworks.game_template.game.Movable;
+import com.thoughtworks.game_template.physics.Physics;
 import com.thoughtworks.game_template.render.Renderer;
 import com.thoughtworks.game_template.render.Sprite;
 import com.thoughtworks.game_template.render.Vector2d;
@@ -11,19 +12,24 @@ import javax.swing.ImageIcon;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
+import static com.thoughtworks.game_template.game.EntityType.*;
+import static com.thoughtworks.game_template.game.EntityType.Player;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Renderer renderer = new Renderer(background());
         renderer.activate();
 
-        List<Movable> objects = newArrayList();
-        Game game = new Game(objects, renderer);
-        game.spawnEntity(new Vector2d(350, 350));
+        List<Entity> entities = newArrayList();
+        Physics physics = new Physics(entities);
+        Game game = new Game(physics, renderer);
+        game.spawnEntity(Player, new Vector2d(350, 500));
+        game.spawnEntity(Enemy, new Vector2d(350, 50));
+        game.spawnEntity(Shot, new Vector2d(350, 450));
 
         game.run();
 
-        renderer.deactivate();
+        game.stop();
     }
 
     private static List<Sprite> background() {
