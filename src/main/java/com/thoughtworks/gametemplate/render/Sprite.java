@@ -1,4 +1,4 @@
-package com.thoughtworks.game_template.render;
+package com.thoughtworks.gametemplate.render;
 
 import java.awt.Image;
 import java.awt.Graphics;

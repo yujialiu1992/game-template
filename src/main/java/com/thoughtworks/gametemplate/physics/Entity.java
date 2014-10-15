@@ -1,6 +1,6 @@
-package com.thoughtworks.game_template.physics;
+package com.thoughtworks.gametemplate.physics;
 
-import com.thoughtworks.game_template.render.Vector2d;
+import com.thoughtworks.gametemplate.render.Vector2d;
 
 public class Entity {
     private Vector2d position;

@@ -1,19 +1,19 @@
-package com.thoughtworks.game_template.main;
+package com.thoughtworks.gametemplate.main;
 
-import com.thoughtworks.game_template.physics.Entity;
-import com.thoughtworks.game_template.game.Game;
-import com.thoughtworks.game_template.physics.Physics;
-import com.thoughtworks.game_template.render.Renderer;
-import com.thoughtworks.game_template.render.Sprite;
-import com.thoughtworks.game_template.render.Vector2d;
+import com.thoughtworks.gametemplate.physics.Entity;
+import com.thoughtworks.gametemplate.game.Game;
+import com.thoughtworks.gametemplate.physics.Physics;
+import com.thoughtworks.gametemplate.render.Renderer;
+import com.thoughtworks.gametemplate.render.Sprite;
+import com.thoughtworks.gametemplate.render.Vector2d;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
-import static com.thoughtworks.game_template.game.EntityType.*;
-import static com.thoughtworks.game_template.game.EntityType.Player;
+import static com.thoughtworks.gametemplate.game.EntityType.*;
+import static com.thoughtworks.gametemplate.game.EntityType.Player;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {

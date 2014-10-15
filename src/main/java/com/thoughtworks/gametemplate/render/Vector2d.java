@@ -1,4 +1,4 @@
-package com.thoughtworks.game_template.render;
+package com.thoughtworks.gametemplate.render;
 
 public class Vector2d {
     private int x;
