@@ -3,10 +3,8 @@ package com.thoughtworks.gametemplate.physics;
 import com.thoughtworks.gametemplate.render.Vector2d;
 
 import java.util.List;
-import java.util.Random;
 
 public class Physics {
-    Random random = new Random();
     private List<Entity> entities;
 
     public Physics(List<Entity> entities) {
@@ -15,7 +13,7 @@ public class Physics {
 
     public void update() {
         for (Entity entity : entities) {
-            Vector2d delta = new Vector2d(random.nextInt(3) - 1, 0);
+            Vector2d delta = new Vector2d(0, 0);
             entity.move(delta);
         }
     }

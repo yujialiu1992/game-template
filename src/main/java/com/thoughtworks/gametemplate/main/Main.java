@@ -4,6 +4,7 @@ import com.thoughtworks.gametemplate.physics.Entity;
 import com.thoughtworks.gametemplate.game.Game;
 import com.thoughtworks.gametemplate.physics.Physics;
 import com.thoughtworks.gametemplate.render.Renderer;
+import com.thoughtworks.gametemplate.render.Window;
 import com.thoughtworks.gametemplate.render.Sprite;
 import com.thoughtworks.gametemplate.render.Vector2d;
 
@@ -17,19 +18,18 @@ import static com.thoughtworks.gametemplate.game.EntityType.Player;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        Renderer renderer = new Renderer(background());
-        renderer.activate();
 
         List<Entity> entities = newArrayList();
         Physics physics = new Physics(entities);
-        Game game = new Game(physics, renderer);
+        Renderer renderer = new Renderer(background());
+        Window window = new Window(renderer);
+        Game game = new Game(physics, window, renderer);
         game.spawnEntity(Player, new Vector2d(350, 500));
         game.spawnEntity(Enemy, new Vector2d(350, 50));
         game.spawnEntity(Shot, new Vector2d(350, 450));
 
         game.run();
 
-        game.stop();
     }
 
     private static List<Sprite> background() {
