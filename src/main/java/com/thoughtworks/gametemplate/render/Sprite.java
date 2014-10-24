@@ -7,7 +7,12 @@ public class Sprite {
     private Image image;
     private Vector2d position;
 
-    public Sprite(Image image, Vector2d position) {
+    public static Sprite fromFile(String fileName, Vector2d position){
+        ImageLoader loader = new ImageLoader();
+        return new Sprite(loader.loadImage(fileName), position);
+    }
+
+    Sprite(Image image, Vector2d position) {
         this.image = image;
         this.position = position;
     }

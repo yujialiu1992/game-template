@@ -9,6 +9,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static com.thoughtworks.gametemplate.render.Sprite.fromFile;
+
 public class Game implements ActionListener {
     private final Timer timer;
     private Physics physics;
@@ -41,6 +43,6 @@ public class Game implements ActionListener {
 
     public void spawnEntity(EntityType type, Vector2d position) {
         physics.spawn(new Entity(position));
-        renderer.addSprite(new Sprite(type.image(), position));
+        renderer.addSprite(fromFile(type.image(), position));
     }
 }
