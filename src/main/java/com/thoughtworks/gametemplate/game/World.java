@@ -1,20 +1,17 @@
-package com.thoughtworks.gametemplate.physics;
-
-import com.thoughtworks.gametemplate.render.Vector2d;
+package com.thoughtworks.gametemplate.game;
 
 import java.util.List;
 
-public class Physics {
+public class World {
     private List<Entity> entities;
 
-    public Physics(List<Entity> entities) {
+    public World(List<Entity> entities) {
         this.entities = entities;
     }
 
     public void update() {
         for (Entity entity : entities) {
-            Vector2d delta = new Vector2d(0, 0);
-            entity.move(delta);
+            entity.update();
         }
     }
 

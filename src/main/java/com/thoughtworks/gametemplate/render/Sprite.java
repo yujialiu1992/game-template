@@ -1,5 +1,7 @@
 package com.thoughtworks.gametemplate.render;
 
+import com.thoughtworks.gametemplate.game.Vector2d;
+
 import java.awt.Image;
 import java.awt.Graphics;
 
@@ -19,5 +21,9 @@ public class Sprite {
 
     public void draw(Graphics graphics) {
         graphics.drawImage(image, position.getX(), position.getY(), null);
+    }
+
+    public void move(Vector2d position) {
+        this.position = position;
     }
 }
