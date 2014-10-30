@@ -13,13 +13,14 @@ game-template
 ## User Stories
 * I can fire a missile (that moves straight up) from my ship
 * When a missile touches an enemy ship that ship is destroyed
-* The enemy ship starts at the top left corner of screen and bounces between the edges of the screen
+* The enemy ship (Bouncer) starts at the top left corner of screen and bounces between the edges of the screen
 * There is a second enemy ship that starts at the top right corner of the screen
-* The second enemy moves randomly around the screen (in both the x and y directions), but never moves off the screen
+* The second enemy ship(Wanderer) moves randomly around the screen (in both the x and y directions), but never moves off the screen
 * I can move my ship left and right but it never moves off the screen
-* The first enemy ship fires missiles that move straight down
-* My ship explodes when a missile hits it
-* The second enemy fires missiles move down and randomly shift left or right
-* Every second a new enemy appears 
+* The Bouncer drops Bombs that move straight down
+* My ship explodes when an enemy projectile hits it
+* The Wanderer fires Roving Missiles move down and randomly shift left or right
+* Instead of the initial two enemies a new enemy appears every second alternating between Bouncers and Wanderers
+* The new enemy that appears can move like a Bouncer or a Wanderer and fires either Bombs or Roving Missiles 
 * There is a third enemy that start near the middle of the screen and moves in a circle
 
