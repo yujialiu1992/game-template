@@ -3,12 +3,12 @@ package com.thoughtworks.gametemplate.game;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import static com.thoughtworks.gametemplate.game.Vector2d.Zero;
+import static com.thoughtworks.gametemplate.game.Vector2f.Zero;
 
 public class PlayerMoveKeyListener implements KeyListener {
     private Entity player;
-    private Vector2d left = new Vector2d(-1.0f, 0.0f);
-    private Vector2d right = new Vector2d(1.0f, 0.0f);
+    private Vector2f left = new Vector2f(-1.0f, 0.0f);
+    private Vector2f right = new Vector2f(1.0f, 0.0f);
 
     public PlayerMoveKeyListener(Entity player) {
 

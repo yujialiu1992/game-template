@@ -42,7 +42,7 @@ public class Game implements ActionListener {
         window.repaint();
     }
 
-    public Entity spawnEntity(EntityType type, Vector2d position) {
+    public Entity spawnEntity(EntityType type, Vector2f position) {
         Sprite sprite = fromFile(type.image(), position);
         renderer.addSprite(sprite);
         Entity entity = new Entity(position, sprite);
