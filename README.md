@@ -32,5 +32,5 @@ game-template
 * The new enemy that appears can move like a Bouncer or a Wanderer and fires either Bombs or Roving Missiles 
 * Enemy ships can also move in a circle (Circler)
 * The game ends when an enemy ship hits my ship
-* Enemy ships can teleport closer to my ship instead of firing ()
+* Enemy ships can teleport closer to my ship instead of firing (Seeker)
 
