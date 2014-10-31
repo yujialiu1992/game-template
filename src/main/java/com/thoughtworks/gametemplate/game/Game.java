@@ -29,7 +29,7 @@ public class Game implements ActionListener {
         window.activate();
 
         while(!user.hasQuit()){
-            Thread.sleep(1);
+            Thread.sleep(1);    // save memory, check one time per second
         }
 
         timer.stop();
@@ -38,15 +38,23 @@ public class Game implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        world.update();
+        Entity entityToDestroy = world.update();
+        if (entityToDestroy != null) {
+            destroyEntity(entityToDestroy);
+        }
         window.repaint();
     }
 
     public Entity spawnEntity(EntityType type, Vector2f position) {
         Sprite sprite = fromFile(type.image(), position);
         renderer.addSprite(sprite);
-        Entity entity = new Entity(position, sprite);
+        Entity entity = new Entity(position, sprite, this, type);
         world.spawn(entity);
         return entity;
+    }
+
+    public void destroyEntity(Entity entity) {
+        renderer.removeSprite(entity.getSprite());
+        world.remove(entity);
     }
 }

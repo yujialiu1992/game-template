@@ -11,12 +11,14 @@ public class PlayerMoveKeyListener implements KeyListener {
     private Vector2f right = new Vector2f(1.0f, 0.0f);
 
     public PlayerMoveKeyListener(Entity player) {
-
         this.player = player;
     }
 
     @Override
     public void keyTyped(KeyEvent event) {
+        if (event.getKeyChar() == ' ') {
+            player.fire();
+        }
     }
 
     @Override

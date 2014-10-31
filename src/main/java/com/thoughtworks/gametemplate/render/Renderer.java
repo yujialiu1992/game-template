@@ -20,4 +20,8 @@ public class Renderer {
     public void addSprite(Sprite sprite) {
         sprites.add(sprite);
     }
+
+    public void removeSprite(Sprite sprite) {
+        sprites.remove(sprite);
+    }
 }

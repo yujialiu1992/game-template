@@ -34,4 +34,5 @@ public class Sprite {
     public int height() {
         return image.getHeight(null);
     }
+
 }

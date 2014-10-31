@@ -28,11 +28,13 @@ public class Main {
 
         Game game = new Game(world, window, renderer, user);
         Entity player = game.spawnEntity(Player, new Vector2f(350.0f, 470.0f));
+        //Entity shot = game.spawnEntity(Shot, new Vector2f(350.0f, 465.0f));
         game.spawnEntity(Enemy, new Vector2f(350.0f, 50.0f));
-        game.spawnEntity(Shot, new Vector2f(350.0f, 425.0f));
-
+        //game.spawnEntity(Shot, new Vector2f(350.0f, 425.0f));
         window.addKeyListener(user);
         window.addKeyListener(new PlayerMoveKeyListener(player));
+
+        //window.addKeyListener(new PlayerShotKeyListener(player, game));
 
         game.run();
 
