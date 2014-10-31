@@ -17,7 +17,7 @@ public class Entity {
 
 
     public void move(){
-        position.add(velocity);
+        position = position.plus(velocity);
         sprite.move(position);
     }
 
